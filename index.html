@@ -19,6 +19,10 @@
 
       var random_color = random_colors[Math.floor(Math.random() * random_colors.length)];
 
+      var random_accents = ["lighten", "darken"]
+
+      var random_accent = random_accents[Math.floor(Math.random() * random_accents.length)];
+
 
       var App = React.createClass({
         render: function() {
@@ -27,7 +31,7 @@
               <div className={random_color + " " + "box"}>
                 1
               </div>
-              <div className="box">
+              <div className={random_color + " " + random_accent + -1 + " " + "box"}>
                 2
               </div>
               <div className="box">
@@ -47,7 +51,7 @@
 
 
       ReactDOM.render(
-        <div>
+        <div className="main">
           <App/>
         </div>,
         destination
