@@ -15,12 +15,16 @@
 
       var destination = document.querySelector("#root");
 
+      var random_colors = ["red", "blue", "yellow", "pink", "purple", "indigo", "cyan", "green", "teal", "lime", "grey", "brown", "amber", "orange"];
+
+      var random_color = random_colors[Math.floor(Math.random() * random_colors.length)];
+
 
       var App = React.createClass({
         render: function() {
           return (
             <div className="container">
-              <div className="box">
+              <div className={random_color + " " + "box"}>
                 1
               </div>
               <div className="box">
