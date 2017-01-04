@@ -8,7 +8,7 @@ html, body, #root, .main, .container {
   align-items: center;
   justify-content: center;
   margin: 0;
-  max-width: 1280px;
+  max-width: 100%;
 }
 
 .box {
