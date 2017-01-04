@@ -13,8 +13,6 @@
     <div id="root"></div>
     <script type="text/babel">
 
-      var destination = document.querySelector("#root");
-
       var random_colors = ["red", "blue", "yellow", "pink", "purple", "indigo", "cyan", "green", "teal", "lime", "grey", "brown", "amber", "orange"];
 
       var random_color = random_colors[Math.floor(Math.random() * random_colors.length)];
@@ -33,24 +31,32 @@
           };
         },
 
+        handleEvent: function () {
+          this.setState({ className: " transition" });
+          var newColor = random_colors[Math.floor(Math.random() * random_colors.length)];
+          this.setState({ mainColor: newColor });
+          var newAccent = this.state.accentColor == random_accents[0] ? random_accents[1] : random_accents[0];
+          this.setState({ accentColor: newAccent });
+        },
+
 
         render: function() {
 
           return (
             <div className="container">
-              <div className={this.state.mainColor + " " + "box"}>
+              <div className={this.state.mainColor + " " + "box"} onClick={this.handleEvent}>
                 1
               </div>
-              <div className={this.state.mainColor + " " + this.state.accentColor + -1 + " " + "box"}>
+              <div className={this.state.mainColor + " " + this.state.accentColor + -1 + " " + "box"} onClick={this.handleEvent}>
                 2
               </div>
-              <div className={this.state.mainColor + " " + this.state.accentColor + -2 + " " + "box"}>
+              <div className={this.state.mainColor + " " + this.state.accentColor + -2 + " " + "box"} onClick={this.handleEvent}>
                 3
               </div>
-              <div className={this.state.mainColor + " " + this.state.accentColor + -3 + " " + "box"}>
+              <div className={this.state.mainColor + " " + this.state.accentColor + -3 + " " + "box"} onClick={this.handleEvent}>
                 4
               </div>
-              <div className={this.state.mainColor + " " + this.state.accentColor + -4 + " " + "box"}>
+              <div className={this.state.mainColor + " " + this.state.accentColor + -4 + " " + "box"} onClick={this.handleEvent}>
                 5
               </div>
             </div>
@@ -64,7 +70,7 @@
         <div className="main">
           <App/>
         </div>,
-        destination
+        document.getElementById('root')
       );
 
     </script>
