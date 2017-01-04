@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reactive Colors</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="_index.scss">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
 
-<head>
-  <title>Reactive Colors</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.1/react-dom.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
-  <script src="main.js"></script>
-</head>
+      var destination = document.querySelector("#root");
 
-<body>
 
-  <script type="text/babel">
-    ReactDOM.render(
-      <h1>Walter</h1>,
-      document.body
-    );
-  </script>
-</body>
+      var App = React.createClass({
+        render: function() {
+          return (
+            <div className="container">
+              <div className="box">
+                1
+              </div>
+              <div className="box">
+                2
+              </div>
+              <div className="box">
+                3
+              </div>
+              <div className="box">
+                4
+              </div>
+              <div className="box">
+                5
+              </div>
+            </div>
+          );
+        }
+      });
 
+
+
+      ReactDOM.render(
+        <div>
+          <App/>
+        </div>,
+        destination
+      );
+
+    </script>
+  </body>
 </html>
