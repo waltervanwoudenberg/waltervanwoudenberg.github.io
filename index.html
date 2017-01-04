@@ -23,12 +23,22 @@
 
       var random_accent = random_accents[Math.floor(Math.random() * random_accents.length)];
 
-
       var App = React.createClass({
+
+        getInitialState: function() {
+
+          return {
+            mainColor: random_color,
+            accentColor: random_accent
+          };
+        },
+
+
         render: function() {
+
           return (
             <div className="container">
-              <div className={random_color + " " + "box"}>
+              <div className={this.state.mainColor + " " + "box"}>
                 1
               </div>
               <div className={random_color + " " + random_accent + -1 + " " + "box"}>
